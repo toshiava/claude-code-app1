@@ -137,7 +137,7 @@ ${taskList}
 
     // テキストブロックだけ取り出してレスポンスを組み立てる
     const responseText = finalMessage.content
-      .filter((b): b is { type: "text"; text: string } => b.type === "text")
+      .filter((b): b is Anthropic.Beta.BetaTextBlock => b.type === "text")
       .map((b) => b.text)
       .join("");
 
